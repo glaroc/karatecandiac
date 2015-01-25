@@ -1,17 +1,17 @@
 body{
-	background-color:#aa0000;
+	background-color:#000000;
 }
 .mainmenu{
 	max-width:500px;
 	min-width:300px;
-	background-color:#aa0000;
 	list-style-type: none;
 }
 .mainmenu li{
 	padding:15px;
 	font-size:2em;
-	border:1px white;
+	border:1px solid #ffffff;
 	border-radius: 5px;
 	color:white;
 	background-color:#aa0000;
+	margin:3px;
 }
