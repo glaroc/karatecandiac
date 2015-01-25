@@ -7,4 +7,8 @@ $(document).ready(function(){
 	$('.mainmenu li').click(function(){
 		var ref = window.open($(this).find('a').attr('tar'));
 	});
+	$('.techmenu li').click(function(){
+		var ref = window.open($(this).find('a').attr('tar'));
+	});
+
 });
