@@ -8,7 +8,9 @@ $(document).ready(function(){
 		var ref = window.open($(this).find('a').attr('tar'));
 	});
 	$('.techmenu li').click(function(){
-		var ref = window.open($(this).find('a').attr('tar'),'_system','location=yes');
+		//var ref = window.open($(this).find('a').attr('tar'),'_system','location=yes');
+		href=$(this).find('a').attr('tar');
+		 window.location.href = href;
 	});
 
 });
