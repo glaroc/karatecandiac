@@ -1,22 +1,57 @@
 body{
 	background-color:#000000;
 }
-.mainmenu{
-	max-width:400px;
+.menu{
+	max-width:80%;
 	min-width:200px;
-	list-style-type: none;
+	list-style-type: circle;
+	padding-left:0;
 }
-.mainmenu li{
+.menu li{
+	margin-left:-10px;
 	padding:15px;
 	font-size:2em;
 	border:1px solid #ffffff;
 	border-radius: 5px;
 	color:white;
 	background-color:#aa0000;
-	margin:3px;
+	margin:5px;
+
 }
 
-.mainmenu li:hover{
-	color:#aa0000;
+.menu li:hover{
+	color:#aa0000 !important;
 	background-color:white;
+}
+
+.videomenu li.jaune:before {
+	content: "■ ";
+    color: #efd201;
+    text-shadow:2px 2px black;
+}
+
+.videomenu li.orange:before {
+	content: "■ ";
+    color: #f1781e; 
+    text-shadow:2px 2px black;
+}
+.videomenu li.verte:before {
+	content: "■ ";
+    color: #2b581e; 
+    text-shadow:2px 2px black;
+}
+.videomenu li.bleue:before {
+	content: "■ ";
+    color: #2b396a; 
+    text-shadow:2px 2px black;
+}
+.videomenu li.brune:before {
+	content: "■ ";
+    color: #402901; 
+    text-shadow:2px 2px black;
+}
+.videomenu li.noire:before {
+	content: "■ ";
+    color: black; 
+    text-shadow:2px 2px black;
 }
