@@ -1,0 +1,14 @@
+body{
+	background:#aa0000;
+}
+#mainmenu{
+	max-width:80%;
+	min-width:300px;
+
+}
+#mainmenu li{
+	padding:15px;
+	font-size:2em;
+	border:1px white;
+	border-radius: 5px;
+}
