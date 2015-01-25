@@ -8,9 +8,25 @@ $(document).ready(function(){
 		var ref = window.open($(this).find('a').attr('tar'));
 	});
 	$('.techmenu li').click(function(){
-		var ref = window.open($(this).find('a').attr('tar'),'_system','location=no');
+		var ref = $(this).find('a').attr('tar');
 		//href=$(this).find('a').attr('tar');
 		//window.plugins.fileOpener.open(href);
+		var fileTransfer = new FileTransfer();
+		var uri = encodeURI(ref);
+
+		fileTransfer.download(
+		    uri,
+		    "pdfs/",
+		    function(entry) {
+		    },
+		    function(error) {
+		    },
+		    false,
+		    {
+		        headers: {
+		        }
+		    }
+		);
 	});
 
 });
