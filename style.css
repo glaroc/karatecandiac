@@ -2,8 +2,8 @@ body{
 	background-color:#000000;
 }
 .mainmenu{
-	max-width:500px;
-	min-width:300px;
+	max-width:400px;
+	min-width:200px;
 	list-style-type: none;
 }
 .mainmenu li{
@@ -14,4 +14,9 @@ body{
 	color:white;
 	background-color:#aa0000;
 	margin:3px;
+}
+
+.mainmenu li:hover{
+	color:#aa0000;
+	background-color:white;
 }
