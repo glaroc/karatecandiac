@@ -1,7 +1,11 @@
 $(document).ready(function(){
 	$('.videomenu li').click(function(){
 		var id= $(this).find('a').attr("vid");
-		var ref = window.open('http://www.youtube.com/embed/'+id+'?html5=1', '_blank', 'location=yes');
+		if parseInt(id.substring(1), 10) {
+			var ref = window.open('http://www.youtube.com/embed/'+id+'?html5=1', '_blank', 'location=yes')
+		}else{
+			var ref = window.open('http://player.vimeo.com/video/'+id, '_blank', 'location=yes');
+		}
 	});
 
 	$('.mainmenu li').click(function(){
