@@ -1,13 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-    <widget id="com.karate.candiac" version="0.0.1">
-        <name>Karaté Candiac</name>
-        <description>
-            Application mobile - École de karaté Candiac
-        </description>
-        <author email="glaroc@gmail.com" href="http://karatecandiac.com">
-            Guillaume Larocque
-        </author>
-        <content src="index.html" />
-        <access origin="*" />
-    </widget>
-</xml>
+
+<widget xmlns     = "http://www.w3.org/ns/widgets"
+        xmlns:gap = "http://phonegap.com/ns/1.0"
+        id  =    "com.karate.candiac"
+        version = "0.0.1">
+    <name>Karaté Candiac</name>
+    <description>
+        Application mobile - École de karaté Candiac
+    </description>
+    <author email="glaroc@gmail.com" href="http://karatecandiac.com">
+        Guillaume Larocque
+    </author>
+    <content src="index.html" />
+    <access origin="*" />
+</widget>
