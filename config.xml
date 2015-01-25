@@ -1,0 +1,11 @@
+    <widget id="com.karate.candiac" version="0.0.1">
+        <name>HelloWorld</name>
+        <description>
+            Application mobile - École de karaté Candiac
+        </description>
+        <author email="glaroc@gmail.com" href="http://karatecandiac.com">
+            Guillaume Larocque
+        </author>
+        <content src="index.html" />
+        <access origin="*" />
+    </widget>
