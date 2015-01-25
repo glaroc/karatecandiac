@@ -1,14 +1,16 @@
 body{
-	background:#aa0000;
+	background-color:#aa0000;
 }
 #mainmenu{
 	max-width:80%;
 	min-width:300px;
-
+	background-color:#aa0000;
 }
-#mainmenu li{
+.mainmenu li{
 	padding:15px;
 	font-size:2em;
 	border:1px white;
 	border-radius: 5px;
+	color:white;
+	background-color:#aa0000;
 }
