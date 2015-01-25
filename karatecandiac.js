@@ -10,7 +10,7 @@ $(document).ready(function(){
 	$('.techmenu li').click(function(){
 		//var ref = window.open($(this).find('a').attr('tar'),'_system','location=yes');
 		href=$(this).find('a').attr('tar');
-		 window.location.href = href;
+		window.plugins.fileOpener.open(href);
 	});
 
 });

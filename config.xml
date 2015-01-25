@@ -12,6 +12,7 @@
         Guillaume Larocque
     </author>
     <content src="index.html" />
+    <gap:plugin name="io.github.pwlin.cordova.plugins.fileopener" version="1.0.1" />
     <icon src="res/icon/icon.png" />
     <icon src="res/icon/android/icon-36-ldpi.png"   gap:platform="android"    gap:density="ldpi" />
     <icon src="res/icon/android/icon-48-mdpi.png"   gap:platform="android"    gap:density="mdpi" />
