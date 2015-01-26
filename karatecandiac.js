@@ -56,7 +56,7 @@ function downloadFile(filename){
                                        sPath + "theFile.pdf",
                                        function(theFile) {
                                        console.log("download complete: " + theFile.toURI());
-                                       showLink(theFile.toURI());
+                                       window.plugins.fileOpener.open(theFile.toURI());
                                        },
                                        function(error) {
                                        console.log("download error source " + error.source);
