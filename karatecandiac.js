@@ -40,35 +40,53 @@ function download(file) {
 }
 
 
-function downloadFile(filename){
-	$('#ready').html(filename);
-    window.requestFileSystem(
-                 LocalFileSystem.PERSISTENT, 0, 
-                 function onFileSystemSuccess(fileSystem) {
-                 fileSystem.root.getFile(
-                             "dummy.html", {create: true, exclusive: false}, 
-                             function gotFileEntry(fileEntry){
-                             $('#ready').html(fileEntry.fullPath);	
-                             var sPath = fileEntry.fullPath.replace("dummy.html","");
-                             var fileTransfer = new FileTransfer();
-                             fileEntry.remove();
-                             fileTransfer.download(
-                                       filename,
-                                       sPath + "theFile.pdf",
-                                       function(theFile) {
-                                       console.log("download complete: " + theFile.toURL());
-                                       window.plugins.fileOpener.open(theFile.toURL());
-                                       $('#ready').html(theFile.toURL());
-                                       },
-                                       function(error) {
-                                       console.log("download error source " + error.source);
-                                       console.log("download error target " + error.target);
-                                       console.log("upload error code: " + error.code);
-                                       }
-                                       );
-                             }, 
-                             fail);
-                 }, 
-                 fail);
 
+function downloadFile(ref) {
+    console.log('downloadFile');
+    window.requestFileSystem(
+        LocalFileSystem.PERSISTENT,
+        0,
+        onRequestFileSystemSuccess,
+        fail
+    );
+}
+
+function onRequestFileSystemSuccess(fileSystem) {
+    console.log('onRequestFileSystemSuccess');
+    fileSystem.root.getFile(
+        'dummy.html',
+        {create: true, exclusive: false},
+        onGetFileSuccess,
+        fail
+    );
+}
+
+function onGetFileSuccess(fileEntry) {
+    console.log('onGetFileSuccess!');
+    var path = fileEntry.toURL().replace('dummy.html', '');
+    var fileTransfer = new FileTransfer();
+    fileEntry.remove();
+    
+    fileTransfer.download(
+        "http://www.karatecandiac.com/TechniquesJaune.pdf",
+        path + 'theFile.pdf',
+        function(file) {
+            console.log('download complete: ' + file.toURI());
+            showLink(file.toURI());
+        },
+        function(error) {
+            console.log('download error source ' + error.source);
+            console.log('download error target ' + error.target);
+            console.log('upload error code: ' + error.code);
+        }
+    );
+}
+
+function showLink(url) {
+	$('#ready').html(url);
+	window.plugins.fileOpener.open(url);
+}
+
+function fail(evt) {
+    console.log(evt.target.error.code);
 }
