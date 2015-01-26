@@ -11,6 +11,9 @@ h1{
 .logo{
 	max-width:90%;
 }
+#ready{
+	color:white;
+}
 .menu{
 	max-width:80%;
 	min-width:200px;
