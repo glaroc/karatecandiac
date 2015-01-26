@@ -33,7 +33,7 @@ function download(file) {
             var ft = new FileTransfer();
             ft.download(remoteFile,
                 localPath, function(entry) {
-                    window.plugins.fileOpener.open(entry.fullPath);
+                    window.plugins.fileOpener.open("file://"+entry.fullPath);
                 }, fail);
         }, fail);
     }, fail);
