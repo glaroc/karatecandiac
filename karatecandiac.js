@@ -1,4 +1,10 @@
-    document.addEventListener("deviceready", onDeviceReady, false);
+document.addEventListener("deviceready", function(){
+    $('.techmenu li').click(function(){
+        var ref = $(this).find('a').attr('tar');
+        downloadFile(ref);
+    });
+}, true);
+
 $(document).ready(function(){
 	$('.videomenu li').click(function(){
 		var id= $(this).find('a').attr("vid");
@@ -13,13 +19,6 @@ $(document).ready(function(){
 		var ref = window.open($(this).find('a').attr('tar'));
 	});
 });
-
-function onDeviceReady() {
-    $('.techmenu li').click(function(){
-        var ref = $(this).find('a').attr('tar');
-        downloadFile(ref);
-    });        
-}
 
 function downloadFile(ref) {
 	$('#ready').html(ref);
