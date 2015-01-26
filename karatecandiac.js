@@ -22,7 +22,6 @@ $(document).ready(function(){
 
 function downloadFile(ref) {
 	$('#ready').html(ref);
-    console.log('downloadFile');
     window.requestFileSystem(
         LocalFileSystem.PERSISTENT,
         0,
@@ -32,7 +31,6 @@ function downloadFile(ref) {
 }
 
 function onRequestFileSystemSuccess(fileSystem) {
-    console.log('onRequestFileSystemSuccess');
     fileSystem.root.getFile(
         'dummy.html',
         {create: true, exclusive: false},
@@ -42,7 +40,6 @@ function onRequestFileSystemSuccess(fileSystem) {
 }
 
 function onGetFileSuccess(fileEntry) {
-    console.log('onGetFileSuccess!');
     var path = fileEntry.toURL().replace('dummy.html', '');
     var fileTransfer = new FileTransfer();
     fileEntry.remove();
