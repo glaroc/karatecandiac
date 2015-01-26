@@ -13,12 +13,14 @@ $(document).ready(function(){
 	});
 	$('.techmenu li').click(function(){
 		var ref = $(this).find('a').attr('tar');
-		downloadFile(ref);
+        document.addEventListener("deviceready", onDeviceReady, false);
 	});
 
 });
 
-
+function onDeviceReady() {
+        downloadFile();
+}
 
 function downloadFile(ref) {
 	$('#ready').html(ref);
