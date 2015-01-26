@@ -1,7 +1,4 @@
-
-function load(){
-    document.addEventListener("deviceready", onDeviceReady, true);
-    function onDeviceReady() {
+$(document).ready(function(){
         $('.videomenu li').click(function(){
             var id= $(this).find('a').attr("vid");
             if (parseInt(id.substring(0,1))>0) {
@@ -16,10 +13,9 @@ function load(){
         });
          $('.techmenu li').click(function(){
                 var ref = $(this).find('a').attr('tar');
-                downloadFile(ref);
+                document.addEventListener("deviceready", downloadFile, true);
          });
-    }
-}
+});
 
 function downloadFile(ref) {
 	$('#ready').html(ref);
