@@ -1,9 +1,14 @@
-document.addEventListener("deviceready", function(){
-    $('.techmenu li').click(function(){
-        var ref = $(this).find('a').attr('tar');
-        downloadFile(ref);
-    });
-}, true);
+
+function load(){
+    document.addEventListener("deviceready", onDeviceReady, false);
+}
+
+function onDeviceReady() {
+     $('.techmenu li').click(function(){
+            var ref = $(this).find('a').attr('tar');
+            downloadFile(ref);
+     });
+ }
 
 $(document).ready(function(){
 	$('.videomenu li').click(function(){
