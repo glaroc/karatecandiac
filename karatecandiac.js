@@ -41,22 +41,24 @@ function download(file) {
 
 
 function downloadFile(filename){
+	$('#ready').html(filename);
     window.requestFileSystem(
                  LocalFileSystem.PERSISTENT, 0, 
                  function onFileSystemSuccess(fileSystem) {
                  fileSystem.root.getFile(
                              "dummy.html", {create: true, exclusive: false}, 
                              function gotFileEntry(fileEntry){
+                             $('#ready').html(fileEntry.fullPath);	
                              var sPath = fileEntry.fullPath.replace("dummy.html","");
                              var fileTransfer = new FileTransfer();
                              fileEntry.remove();
-
                              fileTransfer.download(
                                        filename,
                                        sPath + "theFile.pdf",
                                        function(theFile) {
-                                       console.log("download complete: " + theFile.toURI());
-                                       window.plugins.fileOpener.open(theFile.toURI());
+                                       console.log("download complete: " + theFile.toURL());
+                                       window.plugins.fileOpener.open(theFile.toURL());
+                                       $('#ready').html(theFile.toURL());
                                        },
                                        function(error) {
                                        console.log("download error source " + error.source);
