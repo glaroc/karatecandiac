@@ -20,28 +20,8 @@ $(document).ready(function(){
 
 
 
-
-function download(file) {
-    var remoteFile = file;
-    var localFileName = remoteFile.substring(remoteFile.lastIndexOf('/')+1);
-    window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function(fileSystem) {
-        fileSystem.root.getFile(localFileName, {create: true, exclusive: false}, function(fileEntry) {
-            var localPath = fileEntry.fullPath;
-            if (device.platform === "Android" && localPath.indexOf("file://") === 0) {
-                localPath = localPath.substring(7);
-            }
-            var ft = new FileTransfer();
-            ft.download(remoteFile,
-                localPath, function(entry) {
-                    window.plugins.fileOpener.open("file://"+entry.fullPath);
-                }, fail);
-        }, fail);
-    }, fail);
-}
-
-
-
 function downloadFile(ref) {
+	$('#ready').html(url);
     console.log('downloadFile');
     window.requestFileSystem(
         LocalFileSystem.PERSISTENT,
@@ -71,8 +51,9 @@ function onGetFileSuccess(fileEntry) {
         "http://www.karatecandiac.com/TechniquesJaune.pdf",
         path + 'theFile.pdf',
         function(file) {
-            console.log('download complete: ' + file.toURI());
-            showLink(file.toURI());
+            console.log('download complete: ' + file.toURL());
+            window.plugins.fileOpener.open(file.toURL());
+            showLink(file.toURL());
         },
         function(error) {
             console.log('download error source ' + error.source);
@@ -84,7 +65,6 @@ function onGetFileSuccess(fileEntry) {
 
 function showLink(url) {
 	$('#ready').html(url);
-	window.plugins.fileOpener.open(url);
 }
 
 function fail(evt) {
