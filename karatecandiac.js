@@ -21,7 +21,7 @@ $(document).ready(function(){
 
 
 function downloadFile(ref) {
-	$('#ready').html(url);
+	$('#ready').html(ref);
     console.log('downloadFile');
     window.requestFileSystem(
         LocalFileSystem.PERSISTENT,
@@ -53,7 +53,7 @@ function onGetFileSuccess(fileEntry) {
         function(file) {
             console.log('download complete: ' + file.toURL());
             window.plugins.fileOpener.open(file.toURL());
-            showLink(file.toURL());
+            $('#ready').html(file.toURL());
         },
         function(error) {
             console.log('download error source ' + error.source);
@@ -63,9 +63,6 @@ function onGetFileSuccess(fileEntry) {
     );
 }
 
-function showLink(url) {
-	$('#ready').html(url);
-}
 
 function fail(evt) {
     console.log(evt.target.error.code);
