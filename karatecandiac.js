@@ -1,10 +1,10 @@
 $(document).ready(function(){
 	$('.videomenu li').click(function(){
 		var id= $(this).find('a').attr("vid");
-		if parseInt(id.substring(1), 10) {
-			var ref = window.open('http://www.youtube.com/embed/'+id+'?html5=1', '_blank', 'location=yes')
-		}else{
+		if (parseInt(id.substring(0,1))>0) {
 			var ref = window.open('http://player.vimeo.com/video/'+id, '_blank', 'location=yes');
+		}else{
+			var ref = window.open('http://www.youtube.com/embed/'+id+'?html5=1', '_blank', 'location=yes')
 		}
 	});
 
