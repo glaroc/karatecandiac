@@ -12,7 +12,6 @@
         Guillaume Larocque
     </author>
     <content src="index.html" />
-    <gap:plugin name="com.surfernetwork.fileplugin" version="1.0.2" />
     <gap:plugin name="com.chanthu.evri.gcs-file-transfer" version="1.0.0" />
     <gap:plugin name="io.github.pwlin.cordova.plugins.fileopener" version="1.0.1" />
     <icon src="res/icon/icon.png" />
