@@ -13,7 +13,7 @@ $(document).ready(function(){
 	});
 	$('.techmenu li').click(function(){
 		var ref = $(this).find('a').attr('tar');
-		download(ref);
+		downloadFile(ref);
 	});
 
 });
