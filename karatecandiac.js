@@ -1,5 +1,5 @@
-$(document).ready(function(){
     document.addEventListener("deviceready", onDeviceReady, false);
+$(document).ready(function(){
 	$('.videomenu li').click(function(){
 		var id= $(this).find('a').attr("vid");
 		if (parseInt(id.substring(0,1))>0) {
